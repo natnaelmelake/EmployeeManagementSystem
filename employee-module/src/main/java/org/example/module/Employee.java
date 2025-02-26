@@ -13,7 +13,7 @@ public class Employee {
         this.employeeFirstName = employeeFirstName;
         this.employeeLastName = employeeLastName;
         this.employeeSalary = employeeSalary;
-    }
+    }// constructor
 
 
     public int getEmployeeId() {
