@@ -53,8 +53,12 @@ public class EmployeeManagementUI {
     }
 
 
+    public EmployeeService getEmployeeService() {
+        return employeeService;
+    }
+
     // Method to update JList when new employees are added
-    private void updateEmployeeList() {
+    public void updateEmployeeList() {
         employeeListModel.clear();  // Clear old data
         for (Employee emp : employeeService.getEmployees()) {
             employeeListModel.addElement(emp.getEmployeeId() + " - " + emp.getEmployeeFirstName() + " " + emp.getEmployeeLastName() + " - $" + emp.getEmployeeSalary());
@@ -100,10 +104,14 @@ public class EmployeeManagementUI {
         panel.add(lastNameField);
         panel.add(salaryLabel);
         panel.add(salaryField);
-        panel.add(new JLabel());  // Spacer
+        panel.add(new JLabel());
         panel.add(addButton);
 
         return panel;
+    }
+
+    public DefaultListModel<String> getEmployeeListModel() {
+        return employeeListModel;
     }
 
     public static void main(String[] args) {
